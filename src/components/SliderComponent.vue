@@ -3,7 +3,7 @@
     <div class="slider">
       <div class="sliderbox">
         <swiper class="wrap"     navigation
-    :pagination="{ clickable: true }"  :modules="[EffectFade]" effect="fade" :loop="true" :slides-per-view="1" @swiper="onSwiper">
+    :pagination="{ clickable: true }"  :modules="modules" effect="fade" :loop="true" :slides-per-view="1" @swiper="onSwiper">
           <swiper-slide>
             <div class="image">
               <div class="ob-cover">

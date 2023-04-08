@@ -266,7 +266,7 @@
         </div>
 
         <div id="search-float" :class="['search-float', { active: isActiveSelect }]">
-          <container class="wide">
+          <div class="wide">
             <form action="" class="search">
               <i class="ri-search-line"></i>
               <input
@@ -277,7 +277,7 @@
               />
               <i class="ri-close-line" @click.prevent="isActiveSelect = !isActiveSelect"></i>
             </form>
-          </container>
+          </div>
         </div>
       </div>
     </header>
