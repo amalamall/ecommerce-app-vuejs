@@ -5,6 +5,7 @@
       <GuideProducts />
       <CarouselComponent />
       <ProductsByCategoriesVue />
+      <BannerComponent/>
     </main>
   </div>
 </template>
@@ -15,13 +16,15 @@ import SliderComponent from "@/components/SliderComponent.vue";
 import CarouselComponent from "@/components/CarouselComponent.vue";
 import GuideProducts from "@/components/GuideProducts.vue";
 import ProductsByCategoriesVue from '@/components/ProductsByCategories.vue';
+import BannerComponent from "@/components/BannerComponent.vue";
 export default {
   name: "HomeView",
   components: {
     SliderComponent,
     CarouselComponent,
     GuideProducts,
-    ProductsByCategoriesVue
+    ProductsByCategoriesVue,
+    BannerComponent
   },
 };
 </script>

@@ -187,4 +187,8 @@ export default {
   background-color: var(--dark-color);
   color: var(--white-color);
 }
+
+.sort-data {
+    animation: var(--fade);
+}
 </style>
