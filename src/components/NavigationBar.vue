@@ -38,154 +38,7 @@
                         <div class="container">
                           <div class="wrapper">
                             <div class="mega-content">
-                              <div class="dotgrid">
-                                <div class="wrapper">
-                                  <div class="item">
-                                    <div class="dot-image">
-                                      <a href="" class="product-permalink"></a>
-                                      <div class="thumbnail">
-                                        <img
-                                          src="../assets/images/product_01.jpg"
-                                          alt=""
-                                        />
-                                      </div>
-                                      <div class="thumbnail hover">
-                                        <img
-                                          src="../assets/images/product_01b.jpg"
-                                          alt=""
-                                        />
-                                      </div>
-                                      <div class="actions">
-                                        <ul>
-                                          <li>
-                                            <a href=""
-                                              ><i class="ri-star-line"></i
-                                            ></a>
-                                          </li>
-                                          <li>
-                                            <a href=""
-                                              ><i
-                                                class="ri-arrow-left-right-line"
-                                              ></i
-                                            ></a>
-                                          </li>
-                                          <li>
-                                            <a href=""
-                                              ><i class="ri-eye-line"></i
-                                            ></a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="label"><span>-25%</span></div>
-                                    </div>
-                                    <div class="dot-info">
-                                      <h2 class="dot-title">
-                                        <a href="">The Sweater in Tosca</a>
-                                      </h2>
-                                      <div class="product-price">
-                                        <span class="before">$62.00</span>
-                                        <span class="current">$45.00</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="item">
-                                    <div class="dot-image">
-                                      <a href="" class="product-permalink"></a>
-                                      <div class="thumbnail">
-                                        <img
-                                          src="../assets/images/product_02.jpg"
-                                          alt=""
-                                        />
-                                      </div>
-                                      <div class="thumbnail hover">
-                                        <img
-                                          src="../assets/images/product_02b.jpg"
-                                          alt=""
-                                        />
-                                      </div>
-                                      <div class="actions">
-                                        <ul>
-                                          <li>
-                                            <a href=""
-                                              ><i class="ri-star-line"></i
-                                            ></a>
-                                          </li>
-                                          <li>
-                                            <a href=""
-                                              ><i
-                                                class="ri-arrow-left-right-line"
-                                              ></i
-                                            ></a>
-                                          </li>
-                                          <li>
-                                            <a href=""
-                                              ><i class="ri-eye-line"></i
-                                            ></a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="label"><span>-25%</span></div>
-                                    </div>
-                                    <div class="dot-info">
-                                      <h2 class="dot-title">
-                                        <a href="">The Sweater in Tosca</a>
-                                      </h2>
-                                      <div class="product-price">
-                                        <span class="before">$62.00</span>
-                                        <span class="current">$45.00</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="item">
-                                    <div class="dot-image">
-                                      <a href="" class="product-permalink"></a>
-                                      <div class="thumbnail">
-                                        <img
-                                          src="../assets/images/product_03.jpg"
-                                          alt=""
-                                        />
-                                      </div>
-                                      <div class="thumbnail hover">
-                                        <img
-                                          src="../assets/images/product_03b.jpg"
-                                          alt=""
-                                        />
-                                      </div>
-                                      <div class="actions">
-                                        <ul>
-                                          <li>
-                                            <a href=""
-                                              ><i class="ri-star-line"></i
-                                            ></a>
-                                          </li>
-                                          <li>
-                                            <a href=""
-                                              ><i
-                                                class="ri-arrow-left-right-line"
-                                              ></i
-                                            ></a>
-                                          </li>
-                                          <li>
-                                            <a href=""
-                                              ><i class="ri-eye-line"></i
-                                            ></a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                      <div class="label"><span>-25%</span></div>
-                                    </div>
-                                    <div class="dot-info">
-                                      <h2 class="dot-title">
-                                        <a href="">The Sweater in Tosca</a>
-                                      </h2>
-                                      <div class="product-price">
-                                        <span class="before">$62.00</span>
-                                        <span class="current">$45.00</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                              <ProductSimple/>
                               <div class="links">
                                 <div class="list-block">
                                   <h3 class="dot-title">Apparel</h3>
@@ -346,6 +199,7 @@
   </div>
 </template>
 <script>
+import ProductSimple from './ProductSimple.vue';
 export default {
   data() {
     return {
@@ -356,6 +210,9 @@ export default {
 
     };
   },
+  components :{
+    ProductSimple
+  }
 };
 </script>
 <style >
@@ -540,7 +397,7 @@ export default {
   height: 80px;
 }
 /* Header : product */
-.dotgrid .wrapper {
+/* .dotgrid .wrapper {
   display: var(--display, grid);
   --grid-col: 157px;
   grid-template-columns: repeat(
@@ -647,7 +504,7 @@ img {
 
 .dotgrid .product-price .before {
   text-decoration: line-through;
-}
+} */
 
 /* SEarch */
 

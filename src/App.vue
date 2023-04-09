@@ -191,5 +191,9 @@ h4 {
   font-size: clamp(30px, -0.875em + 8.333vw, var(--fs-max,40px))
 }
 
+.page-home main > div:not(.slider){
+  padding : 100px 0;
+}
+
 /* end of reused style */
 </style>

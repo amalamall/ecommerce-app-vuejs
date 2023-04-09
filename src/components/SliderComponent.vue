@@ -2,74 +2,48 @@
   <main>
     <div class="slider">
       <div class="sliderbox">
-        <swiper class="wrap"     navigation
-    :pagination="{ clickable: true }"  :modules="modules" effect="fade" :loop="true" :slides-per-view="1" @swiper="onSwiper">
-          <swiper-slide>
-            <div class="image">
-              <div class="ob-cover">
-                <img src="../assets/images/slider_01.jpg" />
-              </div>
-              <div class="title-info">
-                <div class="container wide">
-                  <div class="wrap">
-                    <span class="price">$39</span>
-                    <h3 class="title">Feel the tosca color</h3>
-                    <div class="button">
-                      <a href="" class="primary-btn">Shop Now</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div></swiper-slide
+        <swiper
+          class="wrap"
+          :autoplay="{ delay: 3000, disableOnInteraction: false }"
+          :pagination="{ el: '.swiper-pagination', clickable: true}"
+          :modules="modules"
+          effect=""
+          :loop="true"
+          :slides-per-view="1"
+          @swiper="onSwiper"
+          @click="onSwiperClick"
+        >
+          <swiper-slide
+            class="image"
+            v-for="(item, index) in items"
+            :key="index"
           >
-          <swiper-slide>
-            <div class="image">
-              <div class="ob-cover">
-                <img src="../assets/images/slider_02.jpg" />
-              </div>
-              <div class="title-info">
-                <div class="container wide">
-                  <div class="wrap">
-                    <span class="price">$65</span>
-                    <h3 class="title">Inner world of brown</h3>
-                    <div class="button">
-                      <a href="" class="primary-btn">Shop Now</a>
-                    </div>
+            <div class="ob-cover">
+              <img :src="getImageSrc(item?.image)" :alt="item.title" />
+            </div>
+            <div class="title-info">
+              <div class="container wide">
+                <div class="wrap">
+                  <span class="price">{{ item?.price }}</span>
+                  <h3 class="title">{{ item?.title }}</h3>
+                  <div class="button">
+                    <a href="" class="primary-btn">Shop Now</a>
                   </div>
                 </div>
               </div>
-            </div></swiper-slide
-          >
-          <swiper-slide>
-              <div class="image">
-                <div class="ob-cover">
-                  <img src="../assets/images/slider_03.jpg" />
-                </div>
-                <div class="title-info">
-                  <div class="container wide">
-                    <div class="wrap">
-                      <span class="price">$95</span>
-                      <h3 class="title">What a mix of colors</h3>
-                      <div class="button">
-                        <a href="" class="primary-btn">Shop Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div></swiper-slide>
+            </div>
+          </swiper-slide>
+          <div class="custom-pagination">
+            <div class="swiper-pagination"></div>
+          </div>
         </swiper>
       </div>
-      <div class="custom-pagination">
-        <div class="swiper-pagination"></div>
-      </div>
     </div>
-
-    <!-- <button @click="handleSlideTo">slide to 4</button> -->
   </main>
 </template>
 
 <script>
-import { EffectFade,Navigation, Pagination } from 'swiper';
+import { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/swiper-bundle.css";
 
@@ -84,6 +58,26 @@ export default {
   data() {
     return {
       swiper: null,
+      items: [
+        {
+          id: 1,
+          image: "slider_01.jpg",
+          title: "Feel the tosca color",
+          price: "$39",
+        },
+        {
+          id: 2,
+          image: "slider_02.jpg",
+          title: "Inner world of brown",
+          price: "$65",
+        },
+        {
+          id: 3,
+          image: "slider_03.jpg",
+          title: "What a mix of colors",
+          price: "$95",
+        },
+      ],
     };
   },
 
@@ -92,20 +86,31 @@ export default {
       this.swiper = swiper;
     },
 
-    handleSlideTo() {
-      this.swiper.slideTo(3);
+    // handleSlideTo() {
+    //   this.swiper.slideTo(3);
+    // },
+    getImageSrc(image) {
+      return require(`../assets/images/${image}`);
     },
+    handleSlideChange() {
+      if (this.$refs.swiper && this.$refs.swiper.autoplay) {
+        this.$refs.swiper.autoplay.start();
+      }
+    },
+    onSwiperClick () {
+      this.swiper.slideNext()
+    }
   },
   setup() {
-      return {
-        modules: [EffectFade,Navigation, Pagination],
-      };
-    },
+    return {
+      modules: [EffectFade, Navigation, Pagination, Autoplay],
+    };
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style >
 .slider :where(.image, .ob-cover) {
   position: relative;
 }
@@ -147,6 +152,70 @@ export default {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+}
+
+.slider .custom-pagination {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  bottom: 50%;
+  background-color: black;
+}
+
+.slider .custom-pagination .swiper-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  background-color: transparent;
+}
+
+.custom-pagination .swiper-pagination-bullet::before{
+  content:'';
+  position:absolute;
+  width: 8px;
+  height:8px;
+  top:50%;
+  left:50%;
+  background-color: var(--dark-color);
+  border:1px solid var(--dark-color);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  transition: width .2s, height .2s, transform .2s;
+}
+
+.custom-pagination .swiper-pagination-bullet-active::before{
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+}
+
+.slider .title-info :where(span,h3,.button){
+  transform: translateY(30px);
+  opacity: 0;
+  visibility: hidden;
+  transition:  transform .75s, opacity .75s, visibility .75s;
+}
+
+.slider .swiper-slide-active .title-info :where(span,h3,.button){
+  transform : translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider .swiper-slide-active .title-info h3{
+  transition-delay : .5s;
+}
+
+.slider .swiper-slide-active .title-info .button{
+  transition-delay : .75s;
 }
 
 @media (min-width: 992px) {
