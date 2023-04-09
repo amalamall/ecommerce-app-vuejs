@@ -1,21 +1,16 @@
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/> -->
-  <HomeView></HomeView>
+    <NavigationBar />
+    <router-view />
 </template>
 
 <script>
-import HomeView from './views/HomeView.vue';
+import NavigationBar from "./components/NavigationBar.vue";
 export default {
   name: "AppView",
   components: {
-    HomeView,
+    NavigationBar,
   },
 };
-
 </script>
 
 <style>
@@ -48,7 +43,7 @@ export default {
   --transisition-transform: transform 0.3;
 
   --shadow: 0px 10px 20px 0px rgb(0 0 0 / 20%);
-  --fade: fade-bottom .3s cubic-bezier(0.39,0.575, .0565, 1) both;
+  --fade: fade-bottom 0.3s cubic-bezier(0.39, 0.575, 0.0565, 1) both;
 }
 
 /* html {
@@ -80,7 +75,6 @@ a {
   text-decoration: none;
   vertical-align: middle;
   color: inherit;
-
 }
 
 ul {
@@ -153,47 +147,50 @@ h4 {
   border-radius: 50%;
 }
 
-.button > [class*=-btn]{
-  font-size : var(--fs14);
+.button > [class*="-btn"] {
+  font-size: var(--fs14);
   font-weight: var(--fw600);
   text-transform: uppercase;
   padding: 0px 30px;
   display: inline-block;
   line-height: 42px;
-  border-width:2px;
-  border-style:solid;
-  transition: var(--transition-background),
-              var(--transition-color),
-              var(--transition-border);
+  border-width: 2px;
+  border-style: solid;
+  transition: var(--transition-background), var(--transition-color),
+    var(--transition-border);
 }
 
-.secondary-btn , .primary-btn{
+.secondary-btn,
+.primary-btn {
   border-color: var(--dark-color);
 }
 
-.primary-btn, .secondary-btn {
+.primary-btn,
+.secondary-btn {
   border-color: var(--dark-color);
 }
 
 .primary-btn:hover,
 .secondary-btn {
   background-color: var(--dark-color);
-  color: var(--white-color)
+  color: var(--white-color);
 }
 
 .secondary-btn:hover {
   background-color: transparent;
   border-color: var(--dark-color);
-  color: var(--dark-color)
+  color: var(--dark-color);
 }
 
-.title{
-  font-size: clamp(30px, -0.875em + 8.333vw, var(--fs-max,40px))
+.title {
+  font-size: clamp(30px, -0.875em + 8.333vw, var(--fs-max, 40px));
 }
 
-.page-home main > div:not(.slider){
-  padding : 100px 0;
+.grey-color {
+  color: var(--grey-color)
 }
+
+
 
 /* end of reused style */
 </style>

@@ -1,20 +1,14 @@
 <template>
-  <main>
     <div class="slider">
-      <div class="sliderbox">
-        <swiper
-          class="wrap"
-          :autoplay="{ delay: 3000, disableOnInteraction: false }"
-          :pagination="{ el: '.swiper-pagination', clickable: true}"
-          :modules="modules"
-          effect=""
-          :loop="true"
-          :slides-per-view="1"
-          @swiper="onSwiper"
-          @click="onSwiperClick"
-        >
-          <swiper-slide
-            class="image"
+      <div
+        class="sliderbox swiper"
+        ref="swiper1"
+        @swiper="onSwiper"
+        @click="onSwiperClick"
+      >
+        <div class="wrap swiper-wrapper">
+          <div
+            class="image swiper-slide"
             v-for="(item, index) in items"
             :key="index"
           >
@@ -32,32 +26,47 @@
                 </div>
               </div>
             </div>
-          </swiper-slide>
-          <div class="custom-pagination">
+          </div>
+        </div>
+        <div class="custom-pagination">
             <div class="swiper-pagination"></div>
           </div>
-        </swiper>
       </div>
     </div>
-  </main>
 </template>
 
 <script>
-import { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/vue";
+import { EffectFade, Pagination, Autoplay } from "swiper";
+import Swiper from "swiper";
+
 import "swiper/swiper-bundle.css";
 
 export default {
   name: "SliderComponent",
-
-  components: {
-    Swiper,
-    SwiperSlide,
+  mounted() {
+    new Swiper(this.$refs.swiper1, {
+      // Swiper 1 options
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      modules: [EffectFade, Pagination, Autoplay],
+    });
+    this.$refs.swiper1.addEventListener('click', () => {
+      this.$refs.swiper1?.swiper.slideNext();
+    });
   },
+  components: {},
 
   data() {
     return {
-      swiper: null,
       items: [
         {
           id: 1,
@@ -82,35 +91,18 @@ export default {
   },
 
   methods: {
-    onSwiper(swiper) {
-      this.swiper = swiper;
-    },
-
     // handleSlideTo() {
     //   this.swiper.slideTo(3);
     // },
     getImageSrc(image) {
       return require(`../assets/images/${image}`);
     },
-    handleSlideChange() {
-      if (this.$refs.swiper && this.$refs.swiper.autoplay) {
-        this.$refs.swiper.autoplay.start();
-      }
-    },
-    onSwiperClick () {
-      this.swiper.slideNext()
-    }
-  },
-  setup() {
-    return {
-      modules: [EffectFade, Navigation, Pagination, Autoplay],
-    };
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
+<style>
 .slider :where(.image, .ob-cover) {
   position: relative;
 }
@@ -177,45 +169,45 @@ export default {
   background-color: transparent;
 }
 
-.custom-pagination .swiper-pagination-bullet::before{
-  content:'';
-  position:absolute;
+.custom-pagination .swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
   width: 8px;
-  height:8px;
-  top:50%;
-  left:50%;
+  height: 8px;
+  top: 50%;
+  left: 50%;
   background-color: var(--dark-color);
-  border:1px solid var(--dark-color);
+  border: 1px solid var(--dark-color);
   border-radius: 50%;
-  transform: translate(-50%,-50%);
-  transition: width .2s, height .2s, transform .2s;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, transform 0.2s;
 }
 
-.custom-pagination .swiper-pagination-bullet-active::before{
+.custom-pagination .swiper-pagination-bullet-active::before {
   background-color: transparent;
   width: 15px;
   height: 15px;
 }
 
-.slider .title-info :where(span,h3,.button){
+.slider .title-info :where(span, h3, .button) {
   transform: translateY(30px);
   opacity: 0;
   visibility: hidden;
-  transition:  transform .75s, opacity .75s, visibility .75s;
+  transition: transform 0.75s, opacity 0.75s, visibility 0.75s;
 }
 
-.slider .swiper-slide-active .title-info :where(span,h3,.button){
-  transform : translateY(0);
+.slider .swiper-slide-active .title-info :where(span, h3, .button) {
+  transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
-.slider .swiper-slide-active .title-info h3{
-  transition-delay : .5s;
+.slider .swiper-slide-active .title-info h3 {
+  transition-delay: 0.5s;
 }
 
-.slider .swiper-slide-active .title-info .button{
-  transition-delay : .75s;
+.slider .swiper-slide-active .title-info .button {
+  transition-delay: 0.75s;
 }
 
 @media (min-width: 992px) {

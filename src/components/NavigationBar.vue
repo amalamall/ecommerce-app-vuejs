@@ -6,7 +6,12 @@
           <div class="wrap">
             <div class="header-left">
               <div class="menu-bar">
-                <a href="" @click.prevent="isActiveMenu = !isActiveMenu" class="menu-trigger"><i class="ri-menu-line"></i></a>
+                <a
+                  href=""
+                  @click.prevent="isActiveMenu = !isActiveMenu"
+                  class="menu-trigger"
+                  ><i class="ri-menu-line"></i
+                ></a>
               </div>
               <div class="list-inline">
                 <ul>
@@ -38,7 +43,15 @@
                         <div class="container">
                           <div class="wrapper">
                             <div class="mega-content">
-                              <ProductSimple/>
+                              <div class="dotgrid">
+                                <div class="wrapper">
+                                  <ProductSimple
+                                    v-for="item in items"
+                                    :key="item.id"
+                                    :item="item"
+                                  />
+                                </div>
+                              </div>
                               <div class="links">
                                 <div class="list-block">
                                   <h3 class="dot-title">Apparel</h3>
@@ -118,7 +131,10 @@
           </div>
         </div>
 
-        <div id="search-float" :class="['search-float', { active: isActiveSelect }]">
+        <div
+          id="search-float"
+          :class="['search-float', { active: isActiveSelect }]"
+        >
           <div class="wide">
             <form action="" class="search">
               <i class="ri-search-line"></i>
@@ -128,16 +144,23 @@
                 id=""
                 placeholder="Search products"
               />
-              <i class="ri-close-line" @click.prevent="isActiveSelect = !isActiveSelect"></i>
+              <i
+                class="ri-close-line"
+                @click.prevent="isActiveSelect = !isActiveSelect"
+              ></i>
             </form>
           </div>
         </div>
       </div>
     </header>
-    <div :class="['overlay', { active: isActiveSelect || isActiveMenu}]"></div>
-    <div id="mobile-menu"  :class="['mobile-menu', { active: isActiveMenu }]">
+    <div :class="['overlay', { active: isActiveSelect || isActiveMenu }]"></div>
+    <div id="mobile-menu" :class="['mobile-menu', { active: isActiveMenu }]">
       <div class="wrap">
-        <a href="" @click.prevent="isActiveMenu = !isActiveMenu" class="close-trigger">
+        <a
+          href=""
+          @click.prevent="isActiveMenu = !isActiveMenu"
+          class="close-trigger"
+        >
           <i class="ri-close-line"></i>
         </a>
         <div class="main-menu scrollto">
@@ -149,7 +172,10 @@
               <li :class="['has-child', { active: isActiveFirsttMenu }]">
                 <a href="">
                   <span>Products</span>
-                  <span class="child-trigger" @click.prevent="isActiveFirsttMenu = !isActiveFirsttMenu" ><i class="ri-arrow-down-s-line"></i>
+                  <span
+                    class="child-trigger"
+                    @click.prevent="isActiveFirsttMenu = !isActiveFirsttMenu"
+                    ><i class="ri-arrow-down-s-line"></i>
                   </span>
                 </a>
                 <ul class="sub-menu list-block">
@@ -170,19 +196,21 @@
               <li>
                 <a href=""><span>Discount</span></a>
               </li>
-              <li :class="['has-child', { active: isActiveSecondMenu }]" >
+              <li :class="['has-child', { active: isActiveSecondMenu }]">
                 <a href="">
                   <span>Specials</span>
-                  <span class="child-trigger" @click.prevent="isActiveSecondMenu = !isActiveSecondMenu"  
+                  <span
+                    class="child-trigger"
+                    @click.prevent="isActiveSecondMenu = !isActiveSecondMenu"
                     ><i class="ri-arrow-down-s-line"></i
                   ></span>
                 </a>
-                  <ul class="sub-menu list-block">
-                    <li><a href="">Dior</a></li>
-                    <li><a href="">Chanel</a></li>
-                    <li><a href="">Dolce & Gabbana</a></li>
-                    <li><a href="">Gani</a></li>
-                  </ul>
+                <ul class="sub-menu list-block">
+                  <li><a href="">Dior</a></li>
+                  <li><a href="">Chanel</a></li>
+                  <li><a href="">Dolce & Gabbana</a></li>
+                  <li><a href="">Gani</a></li>
+                </ul>
               </li>
               <li>
                 <a href=""><span>Sale</span></a>
@@ -199,24 +227,48 @@
   </div>
 </template>
 <script>
-import ProductSimple from './ProductSimple.vue';
+import ProductSimple from "./ProductSimple.vue";
 export default {
   data() {
     return {
       isActiveSelect: false,
-      isActiveMenu:false,
+      isActiveMenu: false,
       isActiveFirsttMenu: false,
       isActiveSecondMenu: false,
-
+      items: [
+        {
+          id: 1,
+          image: "product_01.jpg",
+          imageHover: "product_01b.jpg",
+          title: "The Sweater in Tosca",
+          priceBefore: "$62.00",
+          priceAfter: "$45.00",
+        },
+        {
+          id: 2,
+          image: "product_02.jpg",
+          imageHover: "product_02b.jpg",
+          title: "Ocean Blue LLC2",
+          priceBefore: "",
+          priceAfter: "$57.00",
+        },
+        {
+          id: 3,
+          image: "product_03.jpg",
+          imageHover: "product_03b.jpg",
+          title: "The Sweater in Tosca",
+          priceBefore: "$62.00",
+          priceAfter: "$45.00",
+        },
+      ],
     };
   },
-  components :{
-    ProductSimple
-  }
+  components: {
+    ProductSimple,
+  },
 };
 </script>
-<style >
-
+<style>
 @keyframes fade-bottom {
   0% {
     transform: translateY(10px);
@@ -244,8 +296,6 @@ export default {
   color: var(--light-color);
 }
 
-
-
 /* Grouped selctor */
 .item-floating,
 .header-center .branding {
@@ -253,8 +303,6 @@ export default {
   align-items: center;
   justify-content: center;
 }
-
-
 
 .list-block a {
   position: relative;
@@ -287,31 +335,32 @@ export default {
 }
 
 .scrollto > .wrapper {
+  --display: flex;
+  padding-bottom: 20px;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
 }
 
-.scrollto .wrapper::-webkit-scrollbar{
+.scrollto .wrapper::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
 
-.scrollto .wrapper::-webkit-scrollbar-thumb{
+.scrollto .wrapper::-webkit-scrollbar-thumb {
   --border-color: var(var(--white-color));
   background-color: var(--light-color);
-  border:3px solid var(--border-color);
+  border: 3px solid var(--border-color);
   border-radius: 20px;
 }
 
-.scrollto .wrapper:hover::-webkit-scrolbar-thumb{
+.scrollto .wrapper:hover::-webkit-scrolbar-thumb {
   background-color: var(--grey-color);
 }
 
-.scrollto .wrapper::-webkit-scrolbar-thumb:hover{
+.scrollto .wrapper::-webkit-scrolbar-thumb:hover {
   background-color: var(--grey-color);
-} 
-
+}
 
 /* header */
 
@@ -588,46 +637,45 @@ form.search :where(i:last-child) {
 }
 
 /* Navigation Bar Mobile */
-.mobile-menu{
-  z-index:1001;
-  pointer-events:none;
+.mobile-menu {
+  z-index: 1001;
+  pointer-events: none;
   visibility: hidden;
-  opacity : 0;
+  opacity: 0;
 }
-.mobile-menu.active{
+.mobile-menu.active {
   visibility: visible;
   opacity: 1;
 }
-.mobile-menu .wrap{
-  position:relative;
+.mobile-menu .wrap {
+  position: relative;
   max-width: calc(100% - 40px);
   width: 360px;
   height: 100%;
   background-color: var(--white-color);
   pointer-events: auto;
-  transform: translateX(var(--transX,  -100%));
+  transform: translateX(var(--transX, -100%));
   transition: var(--transition-transform);
 }
 
-.mobile-menu.active .wrap{
+.mobile-menu.active .wrap {
   transform: translateX(0);
 }
 
 .mobile-menu .close-trigger,
 .mobile-menu .child-trigger {
-  position:absolute;
-  top:0;
-  right:-40px;
-  width:40px;
-  height:40px;
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 40px;
+  height: 40px;
   color: var(--white-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-.mobile-menu .main-menu{
+.mobile-menu .main-menu {
   height: 100%;
   padding: 0 20px;
   display: flex;
@@ -638,33 +686,33 @@ form.search :where(i:last-child) {
   padding: 20px 0;
 }
 
-.mobile-menu nav > ul > li > a{
+.mobile-menu nav > ul > li > a {
   position: relative;
   padding: 12px 0;
   font-weight: 500;
   transition: var(--transition-color);
 }
 
-.mobile-menu nav li :where(li,a){
-  display :block;
+.mobile-menu nav li :where(li, a) {
+  display: block;
 }
 
 .mobile-menu nav > ul > li > a:hover {
-  color: var(--grey-color)
+  color: var(--grey-color);
 }
 
-.mobile-menu .child-trigger{
+.mobile-menu .child-trigger {
   color: var(--dark-color);
-  font-size:20px;
-  right:0;
-  top:50%;
+  font-size: 20px;
+  right: 0;
+  top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
   transition: var(--transition-background);
   z-index: 1;
 }
 
-.mobile-menu .child-trigger:hover{
+.mobile-menu .child-trigger:hover {
   background-color: var(--light-color);
 }
 
@@ -673,7 +721,7 @@ form.search :where(i:last-child) {
   max-height: 0;
   overflow: hidden;
   visibility: hidden;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .mobile-menu nav li.active .sub-menu {
@@ -681,7 +729,7 @@ form.search :where(i:last-child) {
   visibility: visible;
 }
 
-.mobile-menu .button{
+.mobile-menu .button {
   margin-top: auto;
   padding: 20px 0 40px;
   text-align: center;
@@ -689,9 +737,8 @@ form.search :where(i:last-child) {
 
 .mobile-menu .button a {
   display: block;
-  margin-top: 10px ;
+  margin-top: 10px;
 }
-
 
 @media (min-width: 992px) {
   .menu-trigger {
