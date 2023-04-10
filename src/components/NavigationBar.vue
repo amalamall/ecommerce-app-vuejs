@@ -130,21 +130,7 @@
             </div>
           </div>
         </div>
-        <!-- breadcrumb -->
-        <div  class="container">
-          <div class="wrap">
-            <div class="breadcrumb list-inline">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Sweater</a></li>
-                <li>
-                  <span>The sweater in Tosca</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
         <!-- breadcrumb -->
 
         <div
@@ -505,7 +491,8 @@ export default {
   color: var(--light-color);
 }
 
-.header-left .list-inline {
+.header-left .list-inline,
+.sidebar .widget input[type="checkbox"] {
   display: none;
 }
 
@@ -814,7 +801,8 @@ form.search :where(i:last-child) {
 }
 
 @media (min-width: 992px) {
-  .menu-trigger {
+  .menu-trigger,
+  .sidebar .close-trigger {
     display: none;
   }
   .header-center nav {

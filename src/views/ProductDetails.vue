@@ -3,6 +3,21 @@
     <div class="section">
       <div class="container">
         <div class="wrap">
+          <!-- breadcrumb -->
+          <div class="container">
+            <div class="wrap">
+              <div class="breadcrumb list-inline">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Products</a></li>
+                  <li><a href="#">Sweater</a></li>
+                  <li>
+                    <span>The sweater in Tosca</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div class="product dotgrid">
             <div class="wrapper">
               <div class="image">
@@ -130,93 +145,92 @@
                       </span>
                       <a href="">3 Reviews</a>
                     </div>
-                </div>
-                    <div class="product-color">
-                      <span>Colors</span>
-                      <div class="wrap">
-                        <button class="tosca selected"></button>
-                        <button class="brown"></button>
-                        <button class="ocean"></button>
-                      </div>
-                    </div>
-                    <div class="product-size">
-                      <span>Colors</span>
-                      <div class="wrap">
-                        <button disabled>S</button>
-                        <button>M</button>
-                        <button class="selected">L</button>
-                        <button>XL</button>
-                      </div>
-                    </div>
-                    <div class="product-stock">
-                      <div class="wrap">
-                        <strong>201</strong>
-                        <span class="grey-color">in stock</span>
-                        <i class="ri-checkbox-circle-line"></i>
-                      </div>
-                    </div>
-                    <div class="product-action">
-                      <div class="qty">
-                        <button class="decrease">-</button>
-                        <input type="text" value="1" />
-                        <button class="increase">+</button>
-                      </div>
-                      <div class="addcart button">
-                        <button type="submit" class="primary-btn">
-                          Add to cart
-                        </button>
-                      </div>
-                      <div class="buynow button">
-                        <button type="submit" class="secondary-btn">
-                          Buy Now
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="product-control list-inline">
-                      <ul>
-                        <li>
-                          <a href=""
-                            ><i class="ri-heart-line"></i
-                            ><span>Add to wishlist</span></a
-                          >
-                        </li>
-                        <li>
-                          <a href=""
-                            ><i class="ri-arrow-left-right-line"></i
-                            ><span>compare</span></a
-                          >
-                        </li>
-                        <li>
-                          <a href=""
-                            ><i class="ri-share-forward-line"></i
-                            ><span>Share</span></a
-                          >
-                        </li>
-                        <li>
-                          <a href=""
-                            ><i class="ri-question-line"></i
-                            ><span>Ask Question</span></a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="shipping">
-                      <ul>
-                        <li>
-                          <i class="ri-gift-line"></i>
-                          <span>Free shipping & return: </span>
-                          <span class="grey-color">On orders over $100</span>
-                        </li>
-                        <li>
-                          <i class="ri-truck-line"></i>
-                          <span>Estimate Delivery: </span>
-                          <span class="grey-color">01 - 07 Jan, 2030</span>
-                        </li>
-                      </ul>
+                  </div>
+                  <div class="product-color">
+                    <span>Colors</span>
+                    <div class="wrap">
+                      <button class="tosca selected"></button>
+                      <button class="brown"></button>
+                      <button class="ocean"></button>
                     </div>
                   </div>
-                
+                  <div class="product-size">
+                    <span>Colors</span>
+                    <div class="wrap">
+                      <button disabled>S</button>
+                      <button>M</button>
+                      <button class="selected">L</button>
+                      <button>XL</button>
+                    </div>
+                  </div>
+                  <div class="product-stock">
+                    <div class="wrap">
+                      <strong>201</strong>
+                      <span class="grey-color">in stock</span>
+                      <i class="ri-checkbox-circle-line"></i>
+                    </div>
+                  </div>
+                  <div class="product-action">
+                    <div class="qty">
+                      <button class="decrease">-</button>
+                      <input type="text" value="1" />
+                      <button class="increase">+</button>
+                    </div>
+                    <div class="addcart button">
+                      <button type="submit" class="primary-btn">
+                        Add to cart
+                      </button>
+                    </div>
+                    <div class="buynow button">
+                      <button type="submit" class="secondary-btn">
+                        Buy Now
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="product-control list-inline">
+                    <ul>
+                      <li>
+                        <a href=""
+                          ><i class="ri-heart-line"></i
+                          ><span>Add to wishlist</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href=""
+                          ><i class="ri-arrow-left-right-line"></i
+                          ><span>compare</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href=""
+                          ><i class="ri-share-forward-line"></i
+                          ><span>Share</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href=""
+                          ><i class="ri-question-line"></i
+                          ><span>Ask Question</span></a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="shipping">
+                    <ul>
+                      <li>
+                        <i class="ri-gift-line"></i>
+                        <span>Free shipping & return: </span>
+                        <span class="grey-color">On orders over $100</span>
+                      </li>
+                      <li>
+                        <i class="ri-truck-line"></i>
+                        <span>Estimate Delivery: </span>
+                        <span class="grey-color">01 - 07 Jan, 2030</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -261,7 +275,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .product .wrapper {
   --grid-col: 331px;
 }
@@ -393,150 +407,153 @@ export default {
 .summary .qty button {
   width: 40px;
   height: 40px;
-  transition: box-shadow .3s,
-              var(--transition-border),
-              var(--transition-background),
-              var(--transition-color);
+  transition: box-shadow 0.3s, var(--transition-border),
+    var(--transition-background), var(--transition-color);
 }
 
 .summary .product-color button {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
-.summary .product-color button.tosca {background-color: #a9cdcc;}
-.summary .product-color button.brown {background-color: #966548;}
-.summary .product-color button.ocean {background-color: #81b8cc;}
+.summary .product-color button.tosca {
+  background-color: #a9cdcc;
+}
+.summary .product-color button.brown {
+  background-color: #966548;
+}
+.summary .product-color button.ocean {
+  background-color: #81b8cc;
+}
 
 .summary .product-color button.selected,
 .summary .product-color button:hover:not(.selected) {
-    box-shadow: inset 0 0 0 4px var(--white-color);
+  box-shadow: inset 0 0 0 4px var(--white-color);
 }
 
 .summary .product-size button {
-    font-size: var(--fs14);
-    line-height: 44px;
-    border: 1px solid var(--light-color);
-    border-radius: 5px;
-    background-color: transparent;
+  font-size: var(--fs14);
+  line-height: 44px;
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  background-color: transparent;
 }
 
 .summary .product-size button.selected {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-    border-color: var(--dark-color);
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-color: var(--dark-color);
 }
 
 .summary .product-size button:hover:not(.selected, [disabled]) {
-    border-color: var(--dark-color);
+  border-color: var(--dark-color);
 }
 
-.summary .product-size button:disabled{
-    pointer-events: none;
+.summary .product-size button:disabled {
+  pointer-events: none;
 }
 
 .summary .product-stock .wrap,
-.summary .product-control a{
-    display: flex;
-    gap: 5px;
+.summary .product-control a {
+  display: flex;
+  gap: 5px;
 }
 
-.summary .product-stock .wrap i{
-    color: var(--primary-color);
-    padding-left: 10px;
+.summary .product-stock .wrap i {
+  color: var(--primary-color);
+  padding-left: 10px;
 }
-
 
 .summary .qty {
-    display: flex;
-    font-size: 18px;
-    min-width: 110px;
-    height: 50px;
-    margin: 0 20px 20px 0;
-    background-color: var(--flashwhite-color);
+  display: flex;
+  font-size: 18px;
+  min-width: 110px;
+  height: 50px;
+  margin: 0 20px 20px 0;
+  background-color: var(--flashwhite-color);
 }
 
 .summary .qty input {
-    text-align: center;
-    border: 0;
-    outline: 0;
-    background-color: transparent;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
 }
 
 .summary .qty button {
-    font-size: 22px;
-    height: 100%;
-    background-color: transparent;
+  font-size: 22px;
+  height: 100%;
+  background-color: transparent;
 }
 
 .summary .qty button:hover {
-    color: var(--grey-color);
+  color: var(--grey-color);
 }
 
 .summary .product-action {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
-.summary .product-action .buynow{
-    grid-column-start: 1;
-    grid-column-end: 3;
+.summary .product-action .buynow {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
-.summary .product-action :where(.addcart,.buynow) button {
-    width: 100%;
-    height: 50px;
-    border-color: var(--dark-color);
-    padding: 0;
+.summary .product-action :where(.addcart, .buynow) button {
+  width: 100%;
+  height: 50px;
+  border-color: var(--dark-color);
+  padding: 0;
 }
 
-.summary .product-action .addcart button{
-    background-color: var(--white-color);
+.summary .product-action .addcart button {
+  background-color: var(--white-color);
 }
 
-.summary .product-action .addcart button:hover{
-    background-color: var(--dark-color);
+.summary .product-action .addcart button:hover {
+  background-color: var(--dark-color);
 }
 
 .summary .product-control ul {
-    align-items: flex-start;
-    flex-flow: wrap;
-    gap: 20px;
+  align-items: flex-start;
+  flex-flow: wrap;
+  gap: 20px;
 }
 
-.summary .product-control span{
-    font-size: var(--fs14);
+.summary .product-control span {
+  font-size: var(--fs14);
 }
 
 .summary .product-control a {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
 }
 
 .summary .product-control ul li:first-child a:hover i {
-    color: var(--red-color);
+  color: var(--red-color);
 }
 
-.product .summary .shipping{
-    padding-top: 30px;
-    border-top: 1px solid var(--flashwhite-color);
+.product .summary .shipping {
+  padding-top: 30px;
+  border-top: 1px solid var(--flashwhite-color);
 }
 
-.product .summary .shipping li{
-    position: relative;
-    padding-left: 35px;
-    margin-top: 10px;
-    line-height: 1.5;
+.product .summary .shipping li {
+  position: relative;
+  padding-left: 35px;
+  margin-top: 10px;
+  line-height: 1.5;
 }
 
-.product .summary .shipping li i{
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 24px;
-    line-height: 1;
+.product .summary .shipping li i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  line-height: 1;
 }
 
 @media (min-width: 481px) {
@@ -571,30 +588,29 @@ export default {
 }
 
 @media (min-width: 768px) {
-    .product.dotgrid .image {
-        max-width: 100%;
-        margin: 0;
-        position: sticky;
-        top: 30px;
-    }
+  .product.dotgrid .image {
+    max-width: 100%;
+    margin: 0;
+    position: sticky;
+    top: 30px;
+  }
 }
 
 @media (min-width: 1400px) {
-    .product .outer-main{
-        width: 100%;
-        margin: 0;
-    }
+  .product .outer-main {
+    width: 100%;
+    margin: 0;
+  }
 
-    .product .image .outer-thumb{
-        position: absolute;
-        top: 0;
-        left: -100px;
-        height: 100%;
-    }
+  .product .image .outer-thumb {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+  }
 
-    .product.dotgrid .image{
-        overflow: unset;
-    }
-
+  .product.dotgrid .image {
+    overflow: unset;
+  }
 }
 </style>
