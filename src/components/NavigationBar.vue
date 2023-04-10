@@ -31,10 +31,10 @@
               <nav class="menu">
                 <ul>
                   <li>
-                    <a href=""><span>Home</span></a>
+                    <a href="#"><span>Home</span></a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="#">
                       <span>Products</span>
                       <i class="ri-arrow-down-s-line"></i>
                     </a>
@@ -56,28 +56,28 @@
                                 <div class="list-block">
                                   <h3 class="dot-title">Apparel</h3>
                                   <ul>
-                                    <li><a href="">Dolce & Gabbana</a></li>
-                                    <li><a href="">Luis Vuitton</a></li>
-                                    <li><a href="">Versace</a></li>
-                                    <li><a href="">Dior</a></li>
+                                    <li><a href="#">Dolce & Gabbana</a></li>
+                                    <li><a href="#">Luis Vuitton</a></li>
+                                    <li><a href="#">Versace</a></li>
+                                    <li><a href="#">Dior</a></li>
                                   </ul>
                                 </div>
                                 <div class="list-block">
                                   <h3 class="dot-title">Shoes</h3>
                                   <ul>
-                                    <li><a href="">Dolce & Gabbana</a></li>
-                                    <li><a href="">Luis Vuitton</a></li>
-                                    <li><a href="">Versace</a></li>
-                                    <li><a href="">Dior</a></li>
+                                    <li><a href="#">Dolce & Gabbana</a></li>
+                                    <li><a href="#">Luis Vuitton</a></li>
+                                    <li><a href="#">Versace</a></li>
+                                    <li><a href="#">Dior</a></li>
                                   </ul>
                                 </div>
                                 <div class="list-block">
                                   <h3 class="dot-title">Shoes</h3>
                                   <ul>
-                                    <li><a href="">Dolce & Gabbana</a></li>
-                                    <li><a href="">Luis Vuitton</a></li>
-                                    <li><a href="">Versace</a></li>
-                                    <li><a href="">Dior</a></li>
+                                    <li><a href="#">Dolce & Gabbana</a></li>
+                                    <li><a href="#">Luis Vuitton</a></li>
+                                    <li><a href="#">Versace</a></li>
+                                    <li><a href="#">Dior</a></li>
                                   </ul>
                                 </div>
                               </div>
@@ -88,39 +88,39 @@
                     </ul>
                   </li>
                   <li>
-                    <a href=""><span>Disc</span></a>
+                    <a href="#"><span>Disc</span></a>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <a href="">
+                    <a href="#">
                       <span>Special</span>
                       <i class="ri-arrow-down-s-line"></i>
                     </a>
                     <ul class="sub-menu list-block">
-                      <li><a href="">Dolce & Gabbana</a></li>
-                      <li><a href="">Luis Vuitton</a></li>
-                      <li><a href="">Versace</a></li>
-                      <li><a href="">Dior</a></li>
+                      <li><a href="#">Dolce & Gabbana</a></li>
+                      <li><a href="#">Luis Vuitton</a></li>
+                      <li><a href="#">Versace</a></li>
+                      <li><a href="#">Dior</a></li>
                     </ul>
                   </li>
                   <li>
-                    <a href=""><span>Sale</span></a>
+                    <a href="#"><span>Sale</span></a>
                   </li>
                 </ul>
               </nav>
-              <div class="branding"><a href="">Theshop</a></div>
+              <div class="branding"><a href="#">Theshop</a></div>
             </div>
             <div class="header-right">
               <div class="list-inline">
                 <ul>
                   <li>
-                    <a href="#0" @click="isActiveSelect = !isActiveSelect"
+                    <a href="#" @click="isActiveSelect = !isActiveSelect"
                       ><i class="ri-search-line"></i
                     ></a>
                   </li>
                   <li>
-                    <a href=""
+                    <a href="#"
                       ><span class="item-floating">0</span
                       ><i class="ri-shopping-bag-line"></i
                     ></a>
@@ -130,6 +130,22 @@
             </div>
           </div>
         </div>
+        <!-- breadcrumb -->
+        <div  class="container">
+          <div class="wrap">
+            <div class="breadcrumb list-inline">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Sweater</a></li>
+                <li>
+                  <span>The sweater in Tosca</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- breadcrumb -->
 
         <div
           id="search-float"
@@ -157,7 +173,7 @@
     <div id="mobile-menu" :class="['mobile-menu', { active: isActiveMenu }]">
       <div class="wrap">
         <a
-          href=""
+          href="#"
           @click.prevent="isActiveMenu = !isActiveMenu"
           class="close-trigger"
         >
@@ -167,10 +183,10 @@
           <nav class="wrapper">
             <ul>
               <li>
-                <a href=""><span>Home</span></a>
+                <a href="#"><span>Home</span></a>
               </li>
               <li :class="['has-child', { active: isActiveFirsttMenu }]">
-                <a href="">
+                <a href="#">
                   <span>Products</span>
                   <span
                     class="child-trigger"
@@ -179,25 +195,25 @@
                   </span>
                 </a>
                 <ul class="sub-menu list-block">
-                  <li><a href="">Adidas</a></li>
-                  <li><a href="">Chanel</a></li>
-                  <li><a href="">Dolce & Gabbana</a></li>
-                  <li><a href="">Gani</a></li>
-                  <li><a href="">Gucci</a></li>
-                  <li><a href="">Luis Vuitton</a></li>
-                  <li><a href="">Nike</a></li>
-                  <li><a href="">Prada</a></li>
-                  <li><a href="">Puma</a></li>
-                  <li><a href="">Zara</a></li>
-                  <li><a href="">Adidas</a></li>
-                  <li><a href="">Chanel</a></li>
+                  <li><a href="#">Adidas</a></li>
+                  <li><a href="#">Chanel</a></li>
+                  <li><a href="#">Dolce & Gabbana</a></li>
+                  <li><a href="#">Gani</a></li>
+                  <li><a href="#">Gucci</a></li>
+                  <li><a href="#">Luis Vuitton</a></li>
+                  <li><a href="#">Nike</a></li>
+                  <li><a href="#">Prada</a></li>
+                  <li><a href="#">Puma</a></li>
+                  <li><a href="#">Zara</a></li>
+                  <li><a href="#">Adidas</a></li>
+                  <li><a href="#">Chanel</a></li>
                 </ul>
               </li>
               <li>
-                <a href=""><span>Discount</span></a>
+                <a href="#"><span>Discount</span></a>
               </li>
               <li :class="['has-child', { active: isActiveSecondMenu }]">
-                <a href="">
+                <a href="#">
                   <span>Specials</span>
                   <span
                     class="child-trigger"
@@ -206,20 +222,20 @@
                   ></span>
                 </a>
                 <ul class="sub-menu list-block">
-                  <li><a href="">Dior</a></li>
-                  <li><a href="">Chanel</a></li>
-                  <li><a href="">Dolce & Gabbana</a></li>
-                  <li><a href="">Gani</a></li>
+                  <li><a href="#">Dior</a></li>
+                  <li><a href="#">Chanel</a></li>
+                  <li><a href="#">Dolce & Gabbana</a></li>
+                  <li><a href="#">Gani</a></li>
                 </ul>
               </li>
               <li>
-                <a href=""><span>Sale</span></a>
+                <a href="#"><span>Sale</span></a>
               </li>
             </ul>
           </nav>
           <div class="button">
-            <a href="" class="secondary-btn">Login</a>
-            <a href="" class="primary-btn">Register</a>
+            <a href="#" class="secondary-btn">Login</a>
+            <a href="#" class="primary-btn">Register</a>
           </div>
         </div>
       </div>
@@ -228,13 +244,18 @@
 </template>
 <script>
 import ProductSimple from "./ProductSimple.vue";
+
 export default {
+  components: {
+    ProductSimple,
+  },
   data() {
     return {
       isActiveSelect: false,
       isActiveMenu: false,
       isActiveFirsttMenu: false,
       isActiveSecondMenu: false,
+      isOnSpecificPage : false,
       items: [
         {
           id: 1,
@@ -263,12 +284,64 @@ export default {
       ],
     };
   },
-  components: {
-    ProductSimple,
+  mounted() {
+    this.isOnSpecificPage = this.$route.name == "productDetails"
+    console.log(this.$route.name)
   },
+  updated() {
+    if (this.$route.name) {
+      console.log(this.$route.name)
+    }
+  }
 };
 </script>
 <style>
+/* breaddcrumb */
+.breadcrumb {
+  width: 100%;
+  line-height: initial;
+  padding: 30px 0 50px;
+}
+
+.breadcrumb ul {
+  justify-content: center;
+}
+
+.breadcrumb ul li {
+  position: relative;
+  margin-right: 10px;
+}
+
+.breadcrumb ul li:not(:first-child) {
+  padding-left: 25px;
+}
+
+.breadcrumb ul li:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cG9seWdvbiBwb2ludHM9IjE2MCwxMTUuNCAxODAuNyw5NiAzNTIsMjU2IDE4MC43LDQxNiAxNjAsMzk2LjcgMzEwLjUsMjU2ICIvPjwvc3ZnPg==");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.breadcrumb ul :where(li,li a){
+  font-size: var(--fs14) !important;
+  padding-right:  0 !important;
+  padding-left: 0.1 !important;
+}
+
+.breadcrumb ul li:last-child{
+  color: var(--grey-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* breaddcrumb */
+
 @keyframes fade-bottom {
   0% {
     transform: translateY(10px);
