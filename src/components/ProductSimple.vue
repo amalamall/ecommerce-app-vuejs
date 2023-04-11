@@ -1,4 +1,5 @@
 <template>
+  <router-link :to="{ name: 'productDetails',params : { id : item.id } }">
   <div v-if="item" class="item">
     <div class="dot-image">
       <a href="" class="product-permalink"></a>
@@ -33,6 +34,7 @@
       </div>
     </div>
   </div>
+</router-link>
 </template>
 
 <script>

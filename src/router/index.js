@@ -2,11 +2,25 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductDetails from '../views/ProductDetails.vue'
 import ShopView from '../views/ShopView.vue'
+import AuthView from '../views/AuthView.vue'
+import CartView from '../views/CartView.vue'
+import CheckoutView from '../views/CheckoutView.vue'
+import SignUpView from '../views/SignUpView.vue'
+import NotFound from '../views/NotFoundView.vue'
 const routes = [
+  { 
+    path: '/:catchAll(.*)', 
+    component: NotFound 
+  },
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/auth',
+    name: 'auth',
+    component: AuthView
   },
   {
     path: '/products/:id',
@@ -15,8 +29,23 @@ const routes = [
   },
   {
     path: '/products',
-    name: 'shop',
+    name: 'products',
     component: ShopView
+  },
+  {
+    path : '/cart',
+    name: 'cart',
+    component : CartView
+  },
+  {
+    path : '/signup',
+    name: 'signUp',
+    component : SignUpView
+  },
+  {
+    path : '/checkout',
+    name: 'checkout',
+    component : CheckoutView
   },
   {
     path: '/about',

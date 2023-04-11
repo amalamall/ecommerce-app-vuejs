@@ -16,7 +16,9 @@
               <div class="list-inline">
                 <ul>
                   <li>
-                    <a href=""><i class="ri-user-line"></i></a>
+                    <a href="">
+                      <router-link :to="{ name: 'auth' }"><i class="ri-user-line"></i></router-link>
+                    </a>
                   </li>
                   <li>
                     <a href=""
@@ -31,12 +33,14 @@
               <nav class="menu">
                 <ul>
                   <li>
-                    <a href="#"><span>Home</span></a>
+                    <a href=""> <router-link :to="{ name: 'home' }"><span>Home</span></router-link></a>
                   </li>
                   <li>
                     <a href="#">
-                      <span>Products</span>
+                      <router-link :to="{ name: 'products' }">
+                      <span>Products</span> 
                       <i class="ri-arrow-down-s-line"></i>
+                   </router-link>
                     </a>
                     <ul class="sub-mega">
                       <li>
@@ -105,11 +109,11 @@
                     </ul>
                   </li>
                   <li>
-                    <a href="#"><span>Sale</span></a>
+                    <a href="#"><router-link :to="{ name: 'products' }"><span>Sale</span></router-link></a>
                   </li>
                 </ul>
               </nav>
-              <div class="branding"><a href="#">Theshop</a></div>
+              <div class="branding"><a href="#"><router-link :to="{ name: 'home' }">Theshop</router-link></a></div>
             </div>
             <div class="header-right">
               <div class="list-inline">
@@ -121,9 +125,10 @@
                   </li>
                   <li>
                     <a href="#"
-                      ><span class="item-floating">0</span
+                      ><router-link :to="{ name: 'cart' }">
+                      <span class="item-floating">0</span
                       ><i class="ri-shopping-bag-line"></i
-                    ></a>
+                    ></router-link></a>
                   </li>
                 </ul>
               </div>

@@ -24,7 +24,7 @@ export default {
     CarouselComponent,
     GuideProducts,
     ProductsByCategoriesVue,
-    BannerComponent
+    BannerComponent,
   },
 };
 </script>
