@@ -117,9 +117,9 @@ main > div .heading {
 }
 
 @media (min-width: 992px) {
-  .guide .wrapper {
+  /* .guide .wrapper {
     display: flex;
     justify-content: center;
-  }
+  } */
 }
 </style>

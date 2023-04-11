@@ -270,15 +270,15 @@ export default {
       ],
     };
   },
-  mounted() {
-    this.isOnSpecificPage = this.$route.name == "productDetails"
-    console.log(this.$route.name)
-  },
-  updated() {
-    if (this.$route.name) {
-      console.log(this.$route.name)
-    }
-  }
+  // mounted() {
+  //   this.isOnSpecificPage = this.$route.name == "productDetails"
+  //   console.log(this.$route.name)
+  // },
+  // updated() {
+  //   if (this.$route.name) {
+  //     console.log(this.$route.name)
+  //   }
+  // }
 };
 </script>
 <style>
@@ -505,115 +505,7 @@ export default {
   align-items: center;
   height: 80px;
 }
-/* Header : product */
-/* .dotgrid .wrapper {
-  display: var(--display, grid);
-  --grid-col: 157px;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(var(--grid-col), 100%), 1fr)
-  );
-  grid-template-rows: 1;
-  gap: var(--gutter, 30px);
-}
 
-.dotgrid .dot-image {
-  position: relative;
-  margin-bottom: 15px;
-  overflow: hidden;
-}
-
-.dotgrid .dot-image > a,
-.dotgrid .thumbnail.hover,
-.dotgrid .actions,
-.dotgrid .dot-image .label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.dotgrid .dot-image > a {
-  z-index: 1;
-}
-
-.dotgrid .thumbnail.hover {
-  opacity: 0;
-  transition: opacity 0.75s ease,
-    transform 1.1s cubic-bezier(0.15, 0.75.5, 1) 0s;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-.dotgrid .dot-image:hover .thumbnail.hover {
-  opacity: 1;
-  transform: scale3d(1.1, 1.1, 1.1) translateZ(0);
-}
-
-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.dotgrid .actions {
-  z-index: 2;
-  top: auto;
-  bottom: 20px;
-  transform: translate3d(0, 100%, 0);
-  opacity: 0;
-  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
-}
-
-.dot-image:hover .actions {
-  opacity: 1;
-  transform: translateZ(0);
-}
-
-.dotgrid .actions ul,
-.dotgrid .dot-image .label {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.dotgrid .actions ul li a,
-.dotgrid .dot-image .label span {
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  background-color: var(--white-color);
-  border-radius: 50%;
-  transition: var(--transition-background), var(--transition-color);
-}
-.dotgrid .actions ul li a:hover {
-  background-color: var(--dark-color);
-  color: var(--white-color);
-}
-
-.dotgrid .dot-image .label {
-  top: auto;
-  bottom: 20px;
-}
-
-.dotgrid .dot-image .label span {
-  font-size: 12px;
-  font-weight: var(--fw600);
-  background-color: var(--primary-color);
-  color: var(--white-color);
-}
-
-.dotgrid .dot-info {
-  text-align: center;
-}
-
-.dotgrid .product-price .before {
-  text-decoration: line-through;
-} */
 
 /* SEarch */
 
@@ -673,7 +565,8 @@ form.search :where(i:last-child) {
 /* overlay */
 
 .overlay,
-.mobile-menu {
+.mobile-menu,
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -697,17 +590,20 @@ form.search :where(i:last-child) {
 }
 
 /* Navigation Bar Mobile */
-.mobile-menu {
+.mobile-menu,
+.sidebar {
   z-index: 1001;
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
 }
-.mobile-menu.active {
+.mobile-menu.active,
+.sidebar.active {
   visibility: visible;
   opacity: 1;
 }
-.mobile-menu .wrap {
+.mobile-menu .wrap,
+.sidebar > .wrap {
   position: relative;
   max-width: calc(100% - 40px);
   width: 360px;
@@ -718,12 +614,14 @@ form.search :where(i:last-child) {
   transition: var(--transition-transform);
 }
 
-.mobile-menu.active .wrap {
+.mobile-menu.active .wrap ,
+.sidebar.active .wrap{
   transform: translateX(0);
 }
 
 .mobile-menu .close-trigger,
-.mobile-menu .child-trigger {
+.mobile-menu .child-trigger,
+.sidebar .close-trigger {
   position: absolute;
   top: 0;
   right: -40px;
@@ -735,7 +633,8 @@ form.search :where(i:last-child) {
   justify-content: center;
 }
 
-.mobile-menu .main-menu {
+.mobile-menu .main-menu,
+.sidebar-content {
   height: 100%;
   padding: 0 20px;
   display: flex;
@@ -802,7 +701,8 @@ form.search :where(i:last-child) {
 
 @media (min-width: 992px) {
   .menu-trigger,
-  .sidebar .close-trigger {
+  .sidebar .close-trigger,
+  .category-content .sorter > a {
     display: none;
   }
   .header-center nav {

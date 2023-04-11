@@ -4,7 +4,7 @@
       <SliderComponent />
       <GuideProducts />
       <CarouselComponent />
-      <ProductsByCategoriesVue />
+      <ProductsByCategoriesVue isShowingFilter />
       <BannerComponent/>
     </main>
   </div>

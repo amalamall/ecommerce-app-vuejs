@@ -2,7 +2,7 @@
   <div class="bycats">
     <div class="container">
       <div class="wrap">
-        <div class="heading sort-list tabs">
+        <div v-if="isShowingFilter" class="heading sort-list tabs">
           <span class="grey-color"> in </span>
           <div class="wrap">
             <h3 class="opt-trigger" @click.prevent="show = !show">
@@ -48,6 +48,9 @@
 import ProductSimple from './ProductSimple.vue';
 export default {
   name: "ProductsByCategories",
+  props:{
+    isShowingFilter : Boolean
+  },
   components:{
     ProductSimple
   },
