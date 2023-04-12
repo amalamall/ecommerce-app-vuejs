@@ -6,4 +6,5 @@ import 'remixicon/fonts/remixicon.css'
 // import "./index.css";
 
 
+
 createApp(App).use(store).use(router).mount('#app')

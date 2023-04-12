@@ -130,6 +130,11 @@
                       ><i class="ri-shopping-bag-line"></i
                     ></router-link></a>
                   </li>
+                  <li>
+                    <a href="#" @click="handleClickLogout"
+                      >
+                      <i class="ri-logout-box-line"></i></a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -235,10 +240,20 @@
 </template>
 <script>
 import ProductSimple from "./ProductSimple.vue";
+import { useStore } from "vuex";
 
 export default {
   components: {
     ProductSimple,
+  },
+  setup(){
+    const store = useStore()
+
+    const handleClickLogout = () => {
+      store.dispatch('logout')
+    }
+
+    return {handleClickLogout}
   },
   data() {
     return {

@@ -8,57 +8,49 @@
             <p>Please enter your credentials to login.</p>
           </div>
         </div>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
+        <form class="login-form" @submit.prevent="handleSubmit">
+          <!-- <label for="email">email</label> -->
+          <input type="email" placeholder="email" v-model="email" required />
+          <!-- <label for="password">password</label> -->
+          <input type="password" placeholder="password" v-model="password" required />
           <button>login</button>
-          <p class="message">Not registered? <a href="#">Create an account</a></p>
+          <p class="message">Not registered? <a href="#"><router-link :to="{ name: 'signUp' }">Create an account</router-link></a></p>
+          <div v-if="error">{{ error }}</div>
         </form>
       </div>
     </div>
   </main>
 </template>
 <script>
+import { ref } from 'vue'
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
+
 export default {
-  data() {
-    return {
-      showModal: false,
-      activeTab: "login",
-      loginForm: {
-        email: "",
-        password: "",
-      },
-      registerForm: {
-        name: "",
-        email: "",
-        password: "",
-      },
+  setup(){
+    const email = ref('')
+    const password = ref('')
+
+    const router = useRouter()
+    const error = ref(null)
+    const store = useStore()
+
+    const handleSubmit = async () => {
+      console.log(email.value, password.value);
+      try {
+        await store.dispatch('login',{
+          email: email.value,
+          password: password.value
+        })
+        router.push('/')
+
+      } catch (err){
+        error.value = err.message
+      }
     };
-  },
-  methods: {
-    login() {
-      // Handle login form submission
-      console.log(
-        "Logging in with email",
-        this.loginForm.email,
-        "and password",
-        this.loginForm.password
-      );
-      this.showModal = false;
-    },
-    register() {
-      // Handle register form submission
-      console.log(
-        "Registering with name",
-        this.registerForm.name,
-        "email",
-        this.registerForm.email,
-        "and password",
-        this.registerForm.password
-      );
-      this.showModal = false;
-    },
-  },
+
+    return {handleSubmit,email,password,error}
+  }
 };
 </script>
 

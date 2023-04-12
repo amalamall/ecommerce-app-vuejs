@@ -17,6 +17,8 @@ import CarouselComponent from "@/components/CarouselComponent.vue";
 import GuideProducts from "@/components/GuideProducts.vue";
 import ProductsByCategoriesVue from '@/components/ProductsByCategories.vue';
 import BannerComponent from "@/components/BannerComponent.vue";
+
+import { useStore } from "vuex";
 export default {
   name: "HomeView",
   components: {
@@ -26,6 +28,10 @@ export default {
     ProductsByCategoriesVue,
     BannerComponent,
   },
+  setup(){
+    const store = useStore()
+    console.log(store.state.user)
+  }
 };
 </script>
 <style>

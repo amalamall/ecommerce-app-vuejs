@@ -5,16 +5,18 @@
         <div class="signup">
           <div class="signup-header">
             <h3>SignUp</h3>
-            <p>Welcome To Our Shop Create An Account And Start Now.</p>
+            <p>Welcome To Our Shop .</p>
           </div>
         </div>
         <form class="signup-form" @submit.prevent="handleSubmit">
-         <label for="username">Username</label>
-          <input type="text" placeholder="username" />
-          <label for="password">Password</label>
-          <input type="password" placeholder="password" />
+         <!-- <label for="email">email</label> -->
+         <input type="email" placeholder="email" v-model="email" required />
+          <!-- <label for="password">Password</label> -->
+          <input type="password" placeholder="password" v-model="password" required />
+          <input type="password" placeholder="confirm password" v-model="confirmPassword" required />
           <button>Sign Up</button>
-          <p class="message">Have An Account? <a href="#">Sign In</a></p>
+          <p class="message">Have An Account? <a href=""><router-link :to="{ name: 'auth' }">Sign In</router-link></a></p>
+          <div v-if="error">{{ error }}</div>
         </form>
       </div>
     </div>
@@ -22,22 +24,32 @@
 </template>
 <script>
 import { ref } from "vue";
-
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 export default {
-  data() {
-    return {
-
-    };
-  },
   setup() {
     const email = ref("");
     const password = ref("");
+    const confirmPassword = ref("")
+    const router = useRouter()
+    const error = ref(null)
+    const store = useStore()
 
-    const handleSubmit = () => {
-      console.log(email.value, password.value);
+    const handleSubmit = async () => {
+      console.log(email.value, password.value,confirmPassword.value);
+      try {
+        await store.dispatch('signup',{
+          email: email.value,
+          password: password.value
+        })
+        router.push('/')
+
+      } catch (err){
+        error.value = err.message
+      }
     };
 
-    return { handleSubmit, email, password };
+    return { handleSubmit, email, password ,confirmPassword,error};
   },
 };
 </script>
